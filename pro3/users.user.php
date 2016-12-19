@@ -34,20 +34,6 @@ mysql_select_db($dbname,$con);
 //mysql_select_db('ylm4',$users);
 $query= "SELECT *  FROM user_info";
 $results= mysql_query($query,$con);
-//if ($results->num_rows >0) {
-//	echo "<table><tr><th>Users</th></tr>";
-//	while($row= $result->fetch_assoc()) {
-//		echo "<tr><td>" . $row["username"]."</td><td>".$row["password"]."
-//		".$row["email"]."</td></tr>";
-//
-//	}
-//	echo "</table>";
-//} else {
-//	echo "0 results";
-//}
-//$con->close();
-
-
 echo "<h2>Users in Database</h2>";
 
 echo "<table>";
