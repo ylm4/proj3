@@ -10,11 +10,7 @@
 <?php
 require('db.php');
 
-//new info entering--delete if code doesnt work
-
-
-//end of new info entering
-
+//
 
 if (isset($_REQUEST['username'])){
 	$username = stripslashes($_REQUEST['username']); 
@@ -27,8 +23,8 @@ if (isset($_REQUEST['username'])){
 	$password2= mysqli_real_escape_string($con,$password2);
 	//passwords need to match to create user
 	if ($password == $password2 && !empty($username)  && !empty($email)){
-		//edit
 		
+		//db info
 		$query = "INSERT into `user_info` (username, password, email) VALUES ('$username', '".md5($password)."', '$email')";
         	$result = mysqli_query($con,$query);}
 	else {
