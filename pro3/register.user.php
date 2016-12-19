@@ -26,14 +26,13 @@ if (isset($_REQUEST['username'])){
        	$password2= stripslashes($_REQUEST['password2']);
 	$password2= mysqli_real_escape_string($con,$password2);
 	//passwords need to match to create user
-	if ($password == $password2 && !empty($username) && !empty($email)){
+	if ($password == $password2 && !empty($username)  && !empty($email)){
 		//edit
 		
 		$query = "INSERT into `user_info` (username, password, email) VALUES ('$username', '".md5($password)."', '$email')";
         	$result = mysqli_query($con,$query);}
 	else {
-		echo "<center><b>Error: Please check that your passwords match and that you
-		haven't left any blank fields.</b><br><a href='register.user.php'>Try Again.</a></center>";}
+		echo "<center><b>Error: Please check that your passwords match. Remember: don't leave any blank fields.</b><br><a href='register.user.php'>Try Again.</a></center>";}
 		if($result){
            		echo "<div class='form'><h3>You are registered successfully.</h3><br/>Click here to <a href='login.user.php'>Login</a></div>";
         }
